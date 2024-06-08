@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Storey Reels</title>
+    <meta name="keywords" content="free slots, demo casino, demo slots">
+    <link href="assets/logo.png" rel="icon"/>
+
+
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet"/>
+
+     <!-- ====================== Cookie PopUp Start ========================== -->
+		<div class="cookie-overlay show-overlay"></div>
+		<div class="cookie-overlay-2 show-overlay-2"></div>
+		<div class="cookie-popup" id="cookiePopup">
+			<div class="cookie-description">
+				<div class="cookie-text">
+					<h3>Politica Sui Cookie</h3>
+					<p>Utilizziamo i cookie per personalizzare i contenuti, personalizzare e misurare gli annunci e fornire un'esperienza utente migliore. Cliccando su accetta, accetti questo come descritto nella nostra politica sui cookie.</p>
+				</div>
+				
+                <div class="cookie-btn">
+                    <div class="cookie-double-btn">
+                        <button onclick="acceptCookies()" class="cookie-accept">No, Grazie</button>
+                    </div>
+                    <div class="cookie-double-btn">
+                        <button onclick="acceptCookies()" class="cookie-cancel">Accetta</button>
+                    </div>
+                </div>
+
+                <div class="cookie-bg">
+                    <img src="assets/cookie (2).png" alt="">
+                </div>
+			</div>
+		</div>
+
+
+      <style>
+         /* ---------------------------------- 
+            Cookie Popup CSS Start 
+         ------------------------------------- */
+         .cookie-popup {
+			display: none;
+			position: fixed;
+			left: 0;
+			right: 0;
+			background-color: #ffffff;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 1000000;
+			color: #3b3e4a;
+			box-shadow: 0px 0px 40px 0px #ffffff41;
+            overflow: hidden;
+		}
+
+		.cookie-popup.show {
+			display: block;
+			max-width: 580px;
+			margin: 0 auto;
+            padding: 35px 40px 35px 40px;
+		}
+
+        .cookie-text > h3 {
+            color: #000000;
+            font-size: 28px;
+            font-weight: 600;
+            font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            margin: 0px;
+            padding-bottom: 15px;
+        }
+
+        .cookie-text > p {
+            font-size: 15px;
+            line-height: 26px;
+            font-style: normal;
+            font-weight: 500;
+            color: #505050;
+            font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            padding-bottom: 15px;
+        }
+
+        .cookie-btn{
+            display: inline-flex;
+            gap: 15px;
+        }
+
+         .cookie-double-btn button {
+            font-size: 15px;
+            padding: 8px 50px;
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+            transition-duration: 0.2s;
+            transition-timing-function: ease-in-out;
+            border: none;
+            color: #3a3a3a;
+            outline: 0px;
+            font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            background: #1e75d900;
+            border: 1px solid #292929ec;
+            width: 100%;
+            height: 40px;
+            letter-spacing: 0.4px;
+         }
+
+        .cookie-double-btn button.cookie-cancel {
+            background: #292929ec;
+            color: #ffffff;
+            border: none;
+         }
+
+         button.cookie-accept:hover {
+            background: #b77524;
+            color: #ffffff;
+            border: 0px;
+        }
+
+         button.cookie-cancel:hover {
+            background: #b77524;
+            border: 0px;
+        }
+
+        .cookie-bg {
+            right: -20px;
+            top: 185px;
+            position: absolute;
+            max-width: 100%;
+            height: auto;
+            opacity: 0.2;
+        }
+
+        .cookie-bg > img {
+            width: 120px;
+        }
+
+
+         .cookie-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(#000000ef, #000000ef);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 99999;
+            display: none;
+         }
+
+         .cookie-overlay-2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(#000000c7, #000000c7);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 99999;
+            display: none;
+         }
+
+         .show-overlay {
+            display: block;
+         }
+
+         .show-overlay-2 {
+            display: block;
+         }
+
+
+         @media only screen and (max-width: 600px) and (min-width: 320px) {
+            .cookie-popup.show {
+                margin: 0px 20px;
+                padding: 30px 20px;
+            }
+
+            .cookie-text > h3 {
+                font-size: 24px;
+            }
+
+            .cookie-flex-bottom {
+                padding: 8px 20px;
+                gap: 20px;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .cookie-btn {
+                display: inline-flex;
+                flex-direction: column-reverse;
+                align-items: unset;
+                gap: 0px;
+                width: 100%;
+                z-index: 1
+            }
+
+            .cookie-bg {
+                right: -5px;
+                top: -20px;
+                position: absolute;
+                max-width: 100%;
+                height: auto;
+                opacity: 0.2;
+                z-index: -1;
+                transform: rotate(18deg);
+            }
+
+            .cookie-bg > img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .cookie-text > p {
+                margin-bottom: 8px;
+                font-size: 14px;
+                font-weight: 400;
+            }
+
+            .cookie-double-btn button {
+               width: 100%;
+               margin: 5px 0px;
+               
+            }
+
+            .row {
+                margin-right: 0px !important; 
+                 margin-left: 0px !important; 
+            }
+         }
+
+         @media only screen and (max-width: 850px) and (min-width: 768px) {
+            .cookie-popup.show {
+               margin: 0 auto;
+            }
+
+            .cookie-overlay-2{
+               display: none;
+            }
+         }
+         
+         @media only screen and (min-width: 1025px) {
+            .cookie-overlay-2 {
+               display: none;
+            }
+         }
+
+         /* ------------------------------------ 
+            Cookie Popup CSS End 
+         --------------------------------------- */
+      </style>
+
+
+      <script>
+         // ------------------- Cookie Popup JS Start -----------------------
+         document.addEventListener("DOMContentLoaded", function () {
+            if (!getCookie("acceptedCookies")) {
+               // Load background image of the popup first
+               document.querySelector(".cookie-overlay").classList.add("show-overlay");
+               document.querySelector(".cookie-overlay-2").classList.add("show-overlay-2");
+               document.getElementById("cookiePopup").classList.add("show");
+            } else {
+               // If cookies have already been accepted, remove the popup and overlay
+               document.querySelector(".cookie-overlay").classList.remove("show-overlay");
+               document.querySelector(".cookie-overlay-2").classList.remove("show-overlay-2");
+               document.getElementById("cookiePopup").classList.remove("show");
+            }
+         });
+
+         function acceptCookies() {
+            document.getElementById("cookiePopup").classList.remove("show");
+            document.querySelector(".cookie-overlay").classList.remove("show-overlay");
+            document.querySelector(".cookie-overlay-2").classList.remove("show-overlay-2");
+            setCookie("acceptedCookies", true, 30);
+
+            // Load content after accepting cookies
+            setTimeout(function () {
+               console.log("Content uploaded after 3 seconds");
+               // Add your code here to load website images and content
+            }, 3000);
+         }
+
+         function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+               var date = new Date();
+               date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+               expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+         }
+
+         function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+               var c = ca[i];
+               while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+               if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+         }
+         // ------------------- Cookie Popup JS End -----------------------
+      </script>
+      <!-- ==================== Cookie PopUp End ============================== -->
+</head>
+
+<body id="page-top">
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="#page-top">
+            <img src="assets/logo.png" alt="" class="img-fluid p-1" style="width: 15%">
+        </a>
+        <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                                                     href="index.html">Home</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="privacy.html">Privacy</a>
+                </li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                                                     href="terms.html">Terms</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Masthead-->
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading text-uppercase mb-0">Play Online Games</h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Masthead Subheading-->
+        <p class="masthead-subheading font-weight-light mb-0">
+            If you like to play games, you've come to the right place. We provide free online games. These games are
+            from the most reputable gaming firms. We were chosen by everyone since we had the greatest aesthetics and a
+            fantastic experience. Keep checking back for new games!
+        </p>
+    </div>
+</header>
+<!-- Portfolio Section-->
+<section class="page-section portfolio bg-secondary" id="portfolio">
+    <div class="container">
+        <!-- Portfolio Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Games</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Portfolio Grid Items-->
+        <div class="row justify-content-center">
+            <!-- Portfolio Item 1-->
+            <div class="col-md-6 col-lg-6 mb-5">
+                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                    <img class="img-fluid" src="assets/027%20Eagle%20Riches.jpg" alt="..."/>
+                    <h1 class="text-center">
+                        Eagle Riches
+                    </h1>
+                    <p class="text-center">
+                        Transport yourself to America's Wild West where vast treasures await in the exhilerating Eagle
+                        Riches. Once the majestic Eagle's Shadow crosses the 5x4 reels, a symbol swap and a guaranteed
+                        win lie in store in this awesome adventure.
+
+                    </p>
+                    <p class="text-center">
+                        <a href="1.html" class="text-primary">Play Now</a>
+                    </p>
+
+                </div>
+            </div>
+            <!-- Portfolio Item 2-->
+            <div class="col-md-6 col-lg-6 mb-5">
+                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                    <img class="img-fluid" src="assets/028%20Dynamite%20Riches.jpg" alt="..."/>
+                    <h1 class="text-center">
+                        Dynamite Riches
+                    </h1>
+                    <p class="text-center">
+                        Dynamite Riches is an explosive gold-mining themed 5x4 slot where the player must light the
+                        dynamite fuse to unlock the four exciting features for huge wins. This fun game gives guaranteed
+                        entertainment!
+                    </p>
+                    <p class="text-center">
+                        <a href="2.html" class="text-primary">Play Now</a>
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- Portfolio Item 4-->
+            <div class="col-md-6 col-lg-6 mb-5 mb-lg-0">
+                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
+
+                    <img class="img-fluid" src="assets/029%20Da%20Vinci's%20Mystery%20Super%20Lines.jpg" alt="..."/>
+                    <h1 class="text-center">
+                        Da Vinci's Mystery Super Lines
+                    </h1>
+                    <p class="text-center">
+                        Da Vinci's Mystery is our Renaissance-themed masterpiece featuring our Super Lines mechanic
+                        where all symbols pay as Scatters as long as they are on the same win line! This 5x3 slot offers
+                        an exciting bonus round.
+                    </p>
+                    <p class="text-center">
+                        <a href="3.html" class="text-primary">Play Now</a>
+                    </p>
+                </div>
+            </div>
+            <!-- Portfolio Item 5-->
+            <div class="col-md-6 col-lg-6 mb-6 mb-md-0">
+                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
+
+                    <img class="img-fluid" src="assets/030%20Dragon's%20Luck%20Megaways.jpg" alt="..."/>
+                    <h1 class="text-center">
+                        Dragon's Luck Megaways
+                    </h1>
+                    <p class="text-center">
+                        Our classic Asian-themed hit, Dragon's Luck, combines with the phenomenal MegaWays™ mechanic for
+                        huge potential wins of over 10,000x. Watch the Dragon Coins spin to reveal a winning mystery
+                        symbol.
+                    </p>
+                    <p class="text-center">
+                        <a href="4.html" class="text-primary">Play Now</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<div class="copyright py-4 text-center bg-primary">
+    <img src="assets/footerlogo.png" alt="" class="img-fluid w-25">
+    <div class="container"><small>
+        This is a FREE-TO-PLAY social casino games site where you use play credits
+        only. This website does NOT offer "real money" gambling opportunities or chance to win prizes or gifts.
+        This site is intended for 18+ adults only. Practicing at social casino site does NOT guarantee successes at
+        "real money" gambling in future.
+    </small></div>
+</div>
+
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>
